@@ -88,7 +88,7 @@ RUN_MODE=build BENCHMARK=tprocc docker compose up
 RUN_MODE=load BENCHMARK=tprocc docker compose up
 
 # TPC-C Results Parsing (use --no-TTY flag if output is getting truncated)
-docker compose run --rm --no-TTY -e RUN_MODE=parse -e BENCHMARK=tproch hammerdb
+docker compose run --rm --no-TTY -e RUN_MODE=parse -e BENCHMARK=tprocc hammerdb
 
 # TPC-H Schema Build
 RUN_MODE=build BENCHMARK=tproch docker compose up
@@ -97,7 +97,7 @@ RUN_MODE=build BENCHMARK=tproch docker compose up
 RUN_MODE=load BENCHMARK=tproch docker compose up
 
 # TPC-H Results Parsing (use -T flag if output is getting truncated)
-docker compose run --rm --no-TTY -e RUN_MODE=parse -e BENCHMARK=tprocc hammerdb
+docker compose run --rm --no-TTY -e RUN_MODE=parse -e BENCHMARK=tproch hammerdb
 ```
 
 > **Tip**: If you're experiencing truncated output during the parse phase, use the `--no-TTY` flag to disable pseudo-TTY allocation, which provides raw unbuffered output.
